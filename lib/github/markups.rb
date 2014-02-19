@@ -40,5 +40,7 @@ command('rest2html', /re?st(\.txt)?/)
 command(['/usr/bin/env', 'perl', '-MPod::Simple::HTML', '-e', 'Pod::Simple::HTML::go'], /pod/) do |rendered|
   if rendered =~ /<!-- start doc -->\s*(.+)\s*<!-- end doc -->/mi
     $1
+  else
+    rendered
   end
 end
